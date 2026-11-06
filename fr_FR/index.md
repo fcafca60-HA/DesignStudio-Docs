@@ -1,0 +1,65 @@
+---
+layout: default
+permalink: /fr_FR/
+title: Jeedom Design Studio - Guide utilisateur
+---
+
+# Jeedom Design Studio
+
+**Version 0.90.57-beta - GitHub/Market Beta - Gratuit**
+
+Créez et personnalisez des pages de supervision Jeedom : tuiles interactives, températures, éclairage, énergie, thermostats, historique, Smart Layout, seuils de couleurs, animations et mode Kiosque.
+
+> Version Beta : faites une sauvegarde de vos pages avant la mise à jour et vérifiez les autorisations des utilisateurs.
+
+## Accès rapide
+
+- [Démarrer en quelques étapes](./quickstart.html)
+- [Historique des changements](./changelog.html)
+- [Tutoriels et vidéos](./tutoriels.html)
+- [Animations festives - Simplifié / Normal / Dense](./animations.html)
+- [Site Web distant PHP/React](./remote.html)
+- [Aide détaillée intégrée](./help.html)
+- [QuickStart illustré (PDF)](./QuickStart_DesignStudio.pdf)
+
+## Installation via le Market Jeedom (Beta)
+
+1. Dans Jeedom, ouvrez **Plugins > Gestion des plugins > Market**.
+2. Recherchez **Jeedom Design Studio**, puis choisissez **Installer beta**.
+3. Activez le plugin et réglez les autorisations.
+4. Ouvrez **Plugins > Organisation > Jeedom Design Studio**.
+5. Dans l'éditeur, sélectionnez **+ Jeedom > Importer TOUT le Dashboard Jeedom**.
+6. Vérifiez les types des équipements proposés, cliquez sur **Créer le Dashboard validé** et enregistrez.
+
+**Aucune compilation React ni installation de Node.js n'est nécessaire avec la version GitHub/Market Beta**, car les fichiers React sont précompilés dans `app/`. La version File destinée aux essais peut en revanche nécessiter `build_frontend.sh`.
+
+## Modifier les tuiles
+
+- **Propriétés > Données** : relier les commandes INFO/ACTION du bon équipement Jeedom.
+- **Propriétés > Style** : couleurs, polices, halos, Smart Layout et seuils dynamiques.
+- **Propriétés > Visibilité** : afficher ou masquer des éléments selon les commandes disponibles.
+- **Copier Style / Coller Style** : appliquer un style à plusieurs tuiles compatibles, sans modifier leurs données ni leurs positions.
+- **Pages** : laisser la mise en page automatique ou définir une résolution personnalisée avec défilement.
+
+## Animations évènementielles (0.90.57)
+
+Dans **Connexion Jeedom > Animations évènementielles**, associez une commande INFO texte aux valeurs `OFF`, `NOEL`, `NOUVEL_AN`, `PRINTEMPS`, `ETE`, `AUTOMNE`, `HIVER`, `FETE`, `HALLOWEEN`, `PAQUES`. Vous pouvez **tester chaque effet manuellement** sans écrire dans Jeedom ; arrêter le test rétablit le pilotage normal par la commande INFO.
+
+## Site distant PHP/React
+
+La publication distante est facultative. Elle transmet uniquement les pages choisies et les valeurs INFO vers un site PHP sous HTTPS, signé avec une clé HMAC. Le site déporté est en **lecture seule** ; il utilise le même moteur React et ne peut pas exécuter de commandes Jeedom.
+
+1. Installer et configurer le site PHP distant avec son identifiant d'installation et une clé HMAC distincte.
+2. Dans Jeedom, ouvrir la **Publication distante** du plugin, fournir l'URL API HTTPS et la même clé, puis choisir les pages.
+3. Publier maintenant pour tester. Le rafraîchissement récurrent utilise la fréquence configurée.
+4. Sur le serveur distant, placer le bundle React de la **même version** sous `react/` ; le workflow GitHub génère `resources/designstudio-remote-react-assets.zip` dans la branche `beta`.
+5. Ne jamais écraser `config.php` ni `private/` lors d'une mise à jour du site distant.
+
+## Sécurité et sauvegarde
+
+Le projet Design Studio est stocké localement dans `plugins/designstudio/data/project.json`. **Exportez votre projet avant un import complet ou une mise à jour majeure.** Les droits d'exécution des commandes sont toujours ceux de Jeedom. Les secrets HMAC ne doivent jamais être publiés sur GitHub.
+
+
+## Animations festives 0.90.57
+
+Dans **Connexion Jeedom > Animations événementielles**, sélectionnez une commande INFO texte Jeedom puis définissez le niveau **Simplifié**, **Normal** ou **Dense**, et la vitesse. Les thèmes (NOEL, NOUVEL_AN, PRINTEMPS, ETE, AUTOMNE, HIVER, FETE, HALLOWEEN, PAQUES) peuvent tous être prévisualisés avec **Tester l'animation**, même sans commande Jeedom configurée. **Arrêter le test** revient au pilotage Jeedom sans écrire dans ses commandes. Les animations sont désactivées par défaut. Pour OVH, mettez à jour le bundle React distant de la même version et republiez les informations.
