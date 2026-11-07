@@ -23,3 +23,8 @@ La distribution Market est précompilée. Vous n'avez pas à lancer `npm`, Node.
 ## Animations festives 0.90.57
 
 Dans **Connexion Jeedom > Animations événementielles**, sélectionnez une commande INFO texte Jeedom puis définissez le niveau **Simplifié**, **Normal** ou **Dense**, et la vitesse. Les thèmes (NOEL, NOUVEL_AN, PRINTEMPS, ETE, AUTOMNE, HIVER, FETE, HALLOWEEN, PAQUES) peuvent tous être prévisualisés avec **Tester l'animation**, même sans commande Jeedom configurée. **Arrêter le test** revient au pilotage Jeedom sans écrire dans ses commandes. Les animations sont désactivées par défaut. Pour OVH, mettez à jour le bundle React distant de la même version et republiez les informations.
+
+
+### Importer une caméra officielle
+
+L’assistant **Importer TOUT le Dashboard Jeedom** reconnaît les équipements du plugin Camera officiel, même sans commande INFO. Vérifiez le type **Caméra** puis choisissez un rafraîchissement **Manuel, 2, 5, 10, 30 ou 60 s** dans **Propriétés > Style**. La caméra reste réservée à Jeedom ; aucun flux n’est envoyé au site distant.

@@ -6,7 +6,7 @@ title: Jeedom Design Studio - Guide utilisateur
 
 # Jeedom Design Studio
 
-**Version 0.90.57-beta - GitHub/Market Beta - Gratuit**
+**Version 0.90.62-beta - GitHub/Market Beta - Gratuit**
 
 Créez et personnalisez des pages de supervision Jeedom : tuiles interactives, températures, éclairage, énergie, thermostats, historique, Smart Layout, seuils de couleurs, animations et mode Kiosque.
 
@@ -63,3 +63,12 @@ Le projet Design Studio est stocké localement dans `plugins/designstudio/data/p
 ## Animations festives 0.90.57
 
 Dans **Connexion Jeedom > Animations événementielles**, sélectionnez une commande INFO texte Jeedom puis définissez le niveau **Simplifié**, **Normal** ou **Dense**, et la vitesse. Les thèmes (NOEL, NOUVEL_AN, PRINTEMPS, ETE, AUTOMNE, HIVER, FETE, HALLOWEEN, PAQUES) peuvent tous être prévisualisés avec **Tester l'animation**, même sans commande Jeedom configurée. **Arrêter le test** revient au pilotage Jeedom sans écrire dans ses commandes. Les animations sont désactivées par défaut. Pour OVH, mettez à jour le bundle React distant de la même version et republiez les informations.
+
+
+## Caméra Jeedom — 0.90.62 GitHub Beta
+
+La tuile Camera est **générique** : elle utilise l’identifiant d’un équipement du plugin Camera officiel, jamais une URL propre à une marque. Dans **+ Jeedom > Importer TOUT le Dashboard Jeedom**, les équipements `camera` sont proposés même sans commande INFO ; le type Caméra est reconnu automatiquement. Vérifiez la sélection avant de créer le dashboard ; un import complet remplace le projet courant.
+
+Dans **Propriétés > Style**, choisir un rafraîchissement **Manuel / 2 / 5 / 10 / 30 / 60 secondes** et le cadrage **Contenir / Remplir**. Un clic sur l’image l’agrandit. Le proxy Jeedom sert un JPEG pour les sources HTTP JPEG/MJPEG ; pour les autres configurations il utilise `getSnapshot()` du plugin Camera officiel, avec des résultats qui dépendent du modèle et de la configuration. Pas de PTZ dans cette tuile. Les flux et identifiants caméra ne sont **jamais publiés vers OVH** ; sur le site distant la tuile n’affiche pas la vidéo. Le proxy exige une session Jeedom et les droits de l’équipement.
+
+La version **GitHub Beta/Market** comporte le front-end React précompilé par GitHub Actions. Il ne faut pas lancer `build_frontend.sh` après une installation depuis le Market.

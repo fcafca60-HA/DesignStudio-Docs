@@ -1,3 +1,32 @@
+## 0.90.62-beta File - Camera générique et stabilisation de l’affichage
+- Correction du cycle de vie des images React : remplacement des URL blob temporaires par une donnée JPEG locale stable, vérification du décodage avant affichage.
+- Récupération des caméras HTTP JPEG ou MJPEG via le proxy PHP ; configurations non HTTP et fonctions spéciales gérées par `getSnapshot()` du plugin Camera officiel. RTSP dépend du support du plugin Camera.
+- Aucun secret ni URL caméra envoyé au navigateur ; droits Jeedom et contrôle de rafraîchissement conservés.
+- Harmonisation des versions affichées (App, info.json, npm, logs install, script de build, documentation).
+- Non validé sur caméra réelle : vérifier F12 `Content-Type: image/jpeg` et apparition de l’image.
+
+## V0.90.60-beta File — Camera HTTP via le plugin officiel (07/11/2026)
+
+- Suppression du refus HTTP 415 lorsque `urlStream` est vide mais `cameraStreamAccessUrl` est défini, configuration utilisée par `TestCam`/MotionEye.
+- Appel de `camera::getSnapshot()` conservé, avec validation stricte des octets JPEG et taille maximale de 4 Mio.
+- Diagnostics génériques dans le log `designstudio` (`snapshot-empty`, `snapshot-format`, `snapshot-exception`, etc.), limités à un message par minute et par caméra/cause, sans exposition d'URL ni de secret.
+- Les flux RTSP explicites restent refusés, la session et les droits Jeedom restent obligatoires ; aucune image exportée vers OVH.
+- Le plugin Camera officiel peut solliciter son moteur vidéo pour générer un JPEG à partir d'un flux HTTP : tester la charge et la latence en pratique.
+
+## V0.90.59-beta File — Correction détection des caméras (07/11/2026)
+
+- Corrige le filtrage frontend qui masquait les équipements Camera sans commandes INFO dans le catalogue Jeedom.
+- Conservation du modèle sécurisé : seuls les identifiants caméra sont utilisés ; aucune URL ni clé snapshot n'est transférée.
+- Aucune modification du plugin officiel Camera, des données du Dashboard ou de la publication distante.
+
+## 0.90.58-beta — Tuile Camera officielle (File, en validation)
+
+- Import de l'équipement natif Camera Jeedom, y compris sans commande INFO.
+- Snapshot JPEG via PHP sécurisé, droit de lecture Jeedom, sans divulgation de clé.
+- Rafraîchissement manuel/5/10/30/60 secondes ; cadrage contain/cover, agrandissement.
+- Pas de RTSP/FFmpeg ni PTZ, pas d'image sur OVH, aucun accès kiosque sans session Jeedom.
+- Compatible avec la V0.90.57 ; à valider sur Jeedom avant GitHub/Market.
+
 ---
 layout: default
 permalink: /fr_FR/changelog.html
@@ -5,6 +34,23 @@ title: Historique des versions
 ---
 
 # Changelog - Jeedom Design Studio
+
+## 0.90.62-beta — GitHub/Market Beta (07/11/2026)
+- Publication du code de la V0.90.62 File corrigée dans la branche `main` GitHub ; le workflow construit et publie le runtime précompilé dans `beta`.
+- **Camera générique** du plugin officiel : snapshot JPEG sécurisé, HTTP JPEG/MJPEG, délégation aux méthodes officielles pour les autres sources selon leur compatibilité ; correction de l’affichage des JPEG dans React.
+- **Rafraîchissement Camera : Manuel, 2, 5, 10, 30 ou 60 secondes** ; les tuiles existantes conservent leur réglage enregistré.
+- Import complet Jeedom : reconnaissance de `eqType=camera` sans commande INFO, affectation de l’ID natif et type Caméra préselectionné ; les autres équipements et conversions restent inchangés.
+- Contrôle de cohérence des versions et compilation des front-ends Jeedom et OVH par GitHub Actions. Documentation et changelog synchronisés avec le dépôt public de documentation.
+- Sécurité : aucune URL, clé ou image caméra exportée vers OVH ; accès JPEG réservé aux sessions Jeedom autorisées.
+
+## 0.90.61-beta File - Camera officielle : prise en charge MotionEye MJPEG
+- `TestCam` (#434) : récupération de la première image JPEG d'un flux HTTP/MJPEG configuré dans `cameraStreamAccessUrl`, sans FFmpeg ni modification du plugin Camera officiel.
+- Extraction PHP bornée (2 s connexion, 7 s total, 4 Mio/image) avec validation des marqueurs et des dimensions JPEG.
+- Sessions et droits Jeedom conservés ; aucune URL, clé ou image caméra dans le navigateur hors JPEG servi par le proxy, ni dans la publication OVH.
+- Caméras RTSP toujours exclues. Rafraîchissement local préexistant et contrôle anti-surcharge conservés.
+- Libellé de version du script d'installation corrigé.
+- Validation réelle sur Jeedom/MotionEye nécessaire ; ne pas publier au Market sans test.
+
 
 ## 0.90.57-beta - Animations festives enrichies
 - Noël : Père Noël et traîneau avec rennes, sapins, cadeaux, guirlandes, étoiles et neige.
