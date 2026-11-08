@@ -1,3 +1,13 @@
+
+## V0.90.64-beta — Mise à jour Jeedom Market fiabilisée (08/11/2026)
+
+- Contrôle de cohérence entre la version Jeedom, le marqueur de publication Market et le JavaScript React réellement utilisé.
+- Point d'entrée `app/runtime.php` sans cache HTML, avec message visible en cas de versions incohérentes.
+- Runtime Market précompilé sans compilation npm sur Jeedom ; les anciens scripts de build sont neutralisés.
+- GitHub Actions vérifie les versions et refuse la publication si le bundle actif n'est pas celui attendu.
+- La fonction **Vérification Config** (introduite en V0.90.63) et ses contrôles de thermostats, commandes et équipements sont conservés.
+- Le projet et ses sauvegardes restent intacts pendant les mises à jour.
+
 ## 0.90.63-beta — GitHub Market et File : Journaux maîtrisés et Vérification Config (08/11/2026)
 - Nouveau bouton **🛡 Vérification Config** dans l'éditeur (administrateurs Jeedom) : lecture seule du projet enregistré, rapport et accès direct aux tuiles.
 - Contrôles : commandes supprimées, types INFO/ACTION incohérents, références de thermostat non résolues, commandes ACTION partagées entre thermostats, équipement Camera introuvable, pages/identifiants dupliqués.
