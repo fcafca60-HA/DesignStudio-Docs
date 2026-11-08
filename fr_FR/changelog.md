@@ -1,3 +1,14 @@
+## 0.90.63-beta — GitHub Market et File : Journaux maîtrisés et Vérification Config (08/11/2026)
+- Nouveau bouton **🛡 Vérification Config** dans l'éditeur (administrateurs Jeedom) : lecture seule du projet enregistré, rapport et accès direct aux tuiles.
+- Contrôles : commandes supprimées, types INFO/ACTION incohérents, références de thermostat non résolues, commandes ACTION partagées entre thermostats, équipement Camera introuvable, pages/identifiants dupliqués.
+- Aucun `execCmd()` ni ACTION pendant la vérification. Les commandes partagées volontairement restent intactes ; le contrôle est indicatif et ne remplace pas une vérification matérielle.
+- `thermostatSnapshot` non résolu : HTTP 422 explicite (anomalie de configuration) plutôt que 500 ; détail en DEBUG, sans avalanche d'ERROR en mode normal. La tuile espace ses nouvelles tentatives durant 2 minutes jusqu'à changement de référence.
+- `cmdBatch` avec IDs absents mais sans erreur de lecture : diagnostics uniquement en DEBUG. Erreurs de lecture conservées en WARNING.
+- Export du rapport en JSON, sans clé ni URL privée ; contrôle accessible à l'administrateur seulement.
+- Versions 0.90.63-beta synchronisées dans l'éditeur, l'installation, le build, les manifestes et la documentation.
+- Package sources prêt pour le workflow GitHub Actions, compilation React et OVH dans la branche `beta` après validation du workflow. Vérification Config couvre les références enregistrées et nécessite une sauvegarde du projet avant analyse.
+- Aide intégrée accessible par le bouton `❓ Aide` : guides complets (thermostats, Camera, animations, import Dashboard, OVH et vérification) ; nettoyage des anciennes versions dans l’en-tête.
+
 ## 0.90.62-beta File - Camera générique et stabilisation de l’affichage
 - Correction du cycle de vie des images React : remplacement des URL blob temporaires par une donnée JPEG locale stable, vérification du décodage avant affichage.
 - Récupération des caméras HTTP JPEG ou MJPEG via le proxy PHP ; configurations non HTTP et fonctions spéciales gérées par `getSnapshot()` du plugin Camera officiel. RTSP dépend du support du plugin Camera.
@@ -34,14 +45,6 @@ title: Historique des versions
 ---
 
 # Changelog - Jeedom Design Studio
-
-## 0.90.62-beta — GitHub/Market Beta (07/11/2026)
-- Publication du code de la V0.90.62 File corrigée dans la branche `main` GitHub ; le workflow construit et publie le runtime précompilé dans `beta`.
-- **Camera générique** du plugin officiel : snapshot JPEG sécurisé, HTTP JPEG/MJPEG, délégation aux méthodes officielles pour les autres sources selon leur compatibilité ; correction de l’affichage des JPEG dans React.
-- **Rafraîchissement Camera : Manuel, 2, 5, 10, 30 ou 60 secondes** ; les tuiles existantes conservent leur réglage enregistré.
-- Import complet Jeedom : reconnaissance de `eqType=camera` sans commande INFO, affectation de l’ID natif et type Caméra préselectionné ; les autres équipements et conversions restent inchangés.
-- Contrôle de cohérence des versions et compilation des front-ends Jeedom et OVH par GitHub Actions. Documentation et changelog synchronisés avec le dépôt public de documentation.
-- Sécurité : aucune URL, clé ou image caméra exportée vers OVH ; accès JPEG réservé aux sessions Jeedom autorisées.
 
 ## 0.90.61-beta File - Camera officielle : prise en charge MotionEye MJPEG
 - `TestCam` (#434) : récupération de la première image JPEG d'un flux HTTP/MJPEG configuré dans `cameraStreamAccessUrl`, sans FFmpeg ni modification du plugin Camera officiel.

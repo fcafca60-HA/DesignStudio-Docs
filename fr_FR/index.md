@@ -6,7 +6,7 @@ title: Jeedom Design Studio - Guide utilisateur
 
 # Jeedom Design Studio
 
-**Version 0.90.62-beta - GitHub/Market Beta - Gratuit**
+**Version 0.90.63-beta - GitHub/Market Beta - Gratuit**
 
 Créez et personnalisez des pages de supervision Jeedom : tuiles interactives, températures, éclairage, énergie, thermostats, historique, Smart Layout, seuils de couleurs, animations et mode Kiosque.
 
@@ -72,3 +72,8 @@ La tuile Camera est **générique** : elle utilise l’identifiant d’un équip
 Dans **Propriétés > Style**, choisir un rafraîchissement **Manuel / 2 / 5 / 10 / 30 / 60 secondes** et le cadrage **Contenir / Remplir**. Un clic sur l’image l’agrandit. Le proxy Jeedom sert un JPEG pour les sources HTTP JPEG/MJPEG ; pour les autres configurations il utilise `getSnapshot()` du plugin Camera officiel, avec des résultats qui dépendent du modèle et de la configuration. Pas de PTZ dans cette tuile. Les flux et identifiants caméra ne sont **jamais publiés vers OVH** ; sur le site distant la tuile n’affiche pas la vidéo. Le proxy exige une session Jeedom et les droits de l’équipement.
 
 La version **GitHub Beta/Market** comporte le front-end React précompilé par GitHub Actions. Il ne faut pas lancer `build_frontend.sh` après une installation depuis le Market.
+
+
+## Vérification Config — Beta 0.90.63
+
+Dans l’éditeur, cliquez sur **🛡 Vérification Config** après **Enregistrer Jeedom** pour identifier les commandes absentes, les thermostats non résolus, les erreurs de type INFO/ACTION et les actions communes à plusieurs tuiles. Le diagnostic est en lecture seule. [Aide complète](./help.html).
