@@ -1,3 +1,10 @@
+## V0.90.65-beta — Correction Market éditeur et Dashboard (08/11/2026)
+
+- Correction du 404 causé par le fichier `app/runtime.php` absent du paquet Jeedom Market 0.90.64.
+- Chargement de l'éditeur et du Dashboard via le frontend précompilé `app/index.html`, avec paramètre de version et conservation de `dashboard=1`.
+- Validation bloquante du contenu effectif du paquet Market avant publication GitHub.
+- Préservation de Vérification Config, des caméras et de la gestion des droits Jeedom.
+
 
 ## V0.90.64-beta — Mise à jour Jeedom Market fiabilisée (08/11/2026)
 
