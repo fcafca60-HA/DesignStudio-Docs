@@ -1,0 +1,89 @@
+JEEDOM DESIGN STUDIO COMMUNITY NON-COMMERCIAL LICENSE 1.1
+Copyright (c) 2026 DesignStudio.
+All rights reserved except as expressly granted below.
+
+IMPORTANT
+This is a source-available, non-commercial license. It is not an OSI-approved
+open-source license. Third-party components remain governed by their own
+licenses. Nothing in this license changes or restricts rights granted by those
+third-party licenses.
+
+1. DEFINITIONS
+"Software" means Jeedom Design Studio, including its source code, compiled
+runtime, assets and documentation distributed by the copyright holder,
+excluding third-party components identified by their own license notices.
+
+"Official Runtime" means a compiled package or Market branch published by the
+copyright holder for installation and use in Jeedom.
+
+"Non-Commercial Use" means use for personal, educational, community,
+non-profit, evaluation, testing or internal purposes where the Software itself,
+a derivative of it, access to it, or a service substantially based on it is not
+sold, licensed for a fee, rented, monetized, or provided as a paid deliverable.
+
+2. PERMITTED USE
+Subject to this license, you may:
+(a) use the Software without charge for Non-Commercial Use;
+(b) inspect and modify source code made available by the copyright holder for
+    Non-Commercial Use;
+(c) install, copy and redistribute an unmodified Official Runtime without
+    charge, provided that this LICENSE file and copyright notices are retained;
+(d) redistribute modified source versions without charge, provided that this
+    LICENSE file and copyright notices are retained, the complete corresponding
+    source of the modified version is made available to recipients, and the
+    redistribution remains under this same license.
+
+The copyright holder may distribute an Official Runtime separately from the
+source repository. The absence of source code from an Official Runtime package
+does not invalidate that official distribution.
+
+3. COMMERCIAL USE PROHIBITED WITHOUT PERMISSION
+Without prior written permission from the copyright holder, you may not:
+(a) sell or resell the Software or a modified version;
+(b) publish or distribute it as a paid Jeedom plugin or other paid software;
+(c) charge a license, subscription, download, activation or access fee for it;
+(d) include it as a material part of a paid software bundle, appliance or
+    commercial product;
+(e) provide a derivative version as a paid deliverable or white-label product;
+(f) remove or bypass license notices in order to present the Software as your
+    own commercial product.
+
+Charging only for unrelated physical hardware or unrelated professional work
+does not by itself transfer ownership of the Software, but any commercial
+redistribution, licensing or paid derivative of the Software requires written
+permission from the copyright holder.
+
+4. MODIFIED VERSIONS
+Modified versions distributed to third parties must:
+(a) clearly state that they are modified;
+(b) retain this license and copyright notices;
+(c) identify the modifier(s) and modification date where reasonably practical;
+(d) not imply endorsement by DesignStudio or by Jeedom SAS.
+
+5. BRANDING AND TRADEMARKS
+No trademark rights are granted by this license. "Jeedom" and related marks
+belong to their respective owner(s). This project is not granted any right to
+represent itself as an official Jeedom product unless separately authorized.
+The original Design Studio branding, logo and visual identity may not be used
+to market a modified commercial product without written permission.
+
+6. NO WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED
+BY LAW, THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.
+
+7. TERMINATION
+Your rights under this license terminate automatically if you materially breach
+it and fail to cure the breach within 30 days after receiving written notice.
+Upon termination you must stop distributing the Software under rights granted
+by this license.
+
+8. COMMERCIAL LICENSING
+Commercial use, paid redistribution, OEM integration or a commercial fork may
+be authorized under a separate written license from the copyright holder.
+
+9. SEVERABILITY
+If any provision is held unenforceable, the remaining provisions remain in
+effect to the maximum extent permitted by law.

@@ -1,3 +1,5 @@
+> **Complément documentaire de la V0.90.67-beta (09/11/2026)** : page [Licence et conditions d'utilisation](./licence.html), visibilité de l'interdiction d'exploitation commerciale sans autorisation écrite, lien vers le texte intégral. Aucun changement du code fonctionnel ; V0.90.67-beta toujours à valider sur Jeedom avant toute publication Market.
+
 ## V0.90.67-beta — Widget Texte enrichi et fonds d'écran (09/11/2026)
 
 - Inclut l'ergonomie V0.90.66 révisée : Import Jeedom, Backup PC et Aperçu visibles, commandes secondaires dans Outils.

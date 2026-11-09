@@ -6,14 +6,17 @@ title: Jeedom Design Studio - Guide utilisateur
 
 # Jeedom Design Studio
 
-**Version 0.90.67-beta - GitHub/Market Beta - Gratuit**
+**Version 0.90.67-beta — Beta gratuite sous licence non commerciale (validation Jeedom en attente)**
 
 Créez et personnalisez des pages de supervision Jeedom : tuiles interactives, températures, éclairage, énergie, thermostats, historique, Smart Layout, seuils de couleurs, animations et mode Kiosque.
 
 > Version Beta : faites une sauvegarde de vos pages avant la mise à jour et vérifiez les autorisations des utilisateurs.
 
+> **Licence :** utilisation gratuite dans les conditions de la [licence non commerciale](./licence.html). Toute exploitation commerciale du logiciel nécessite une autorisation écrite préalable.
+
 ## Accès rapide
 
+- [Licence et conditions d’utilisation](./licence.html)
 - [Démarrer en quelques étapes](./quickstart.html)
 - [Historique des changements](./changelog.html)
 - [Tutoriels et vidéos](./tutoriels.html)
