@@ -1,21 +1,38 @@
-## V0.90.65-beta — Correction Market éditeur et Dashboard (08/11/2026)
+## V0.90.67-beta — Widget Texte enrichi et fonds d'écran (09/11/2026)
 
-- Correction du 404 causé par le fichier `app/runtime.php` absent du paquet Jeedom Market 0.90.64.
-- Chargement de l'éditeur et du Dashboard via le frontend précompilé `app/index.html`, avec paramètre de version et conservation de `dashboard=1`.
-- Validation bloquante du contenu effectif du paquet Market avant publication GitHub.
-- Préservation de Vérification Config, des caméras et de la gestion des droits Jeedom.
+- Inclut l'ergonomie V0.90.66 révisée : Import Jeedom, Backup PC et Aperçu visibles, commandes secondaires dans Outils.
+- Widget Texte : alignement horizontal et vertical, famille/taille/épaisseur de police, italique, couleur du texte, fond et opacité, marge intérieure.
+- Trois animations optionnelles : fondu, pulsation, clignotement, réglage de durée et déclenchement à chaque changement de valeur.
+- Compatibilité : les anciens widgets Texte sans ces propriétés conservent leur rendu historique.
+- Image de fond locale : taille maximale portée à 2 500 000 octets (2,5 Mo). L'image reste intégrée au projet.
+- Cohérence des versions HTML/PHP/React/docs et contrôle bloquant GitHub Actions étendu.
+- Validation indispensable du ZIP généré par GitHub, téléchargé manuellement puis installé dans Jeedom via File avant diffusion Market.
 
+## V0.90.66-beta — Barre compacte et aide harmonisée (09/11/2026)
 
-## V0.90.64-beta — Mise à jour Jeedom Market fiabilisée (08/11/2026)
+- Navigation sans chevauchement : bandeau Outils rétractable, Import Jeedom, Backup PC et Aperçu visibles.
+- Commande de sauvegarde manuelle déplacée ; sauvegarde automatique conservée.
+- Menu Jeedom : accès à la page existante de configuration du plugin, sans modifier les droits ni la persistance.
+- Aide intégrée : versions courantes homogènes.
 
-- Contrôle de cohérence entre la version Jeedom, le marqueur de publication Market et le JavaScript React réellement utilisé.
-- Point d'entrée `app/runtime.php` sans cache HTML, avec message visible en cas de versions incohérentes.
-- Runtime Market précompilé sans compilation npm sur Jeedom ; les anciens scripts de build sont neutralisés.
-- GitHub Actions vérifie les versions et refuse la publication si le bundle actif n'est pas celui attendu.
-- La fonction **Vérification Config** (introduite en V0.90.63) et ses contrôles de thermostats, commandes et équipements sont conservés.
-- Le projet et ses sauvegardes restent intacts pendant les mises à jour.
+## V0.90.65-beta — Correction des points d'entrée Market et contrôles bloquants (08/11/2026)
 
-## 0.90.63-beta — GitHub Market et File : Journaux maîtrisés et Vérification Config (08/11/2026)
+- Correction de l'erreur 404 dans l'éditeur et le Dashboard de la V0.90.64 Market : suppression de la dépendance au fichier `app/runtime.php` absent de certains packages installés.
+- L'éditeur utilise `app/index.html?v=0.90.65-beta` et le Dashboard `app/index.html?dashboard=1&v=0.90.65-beta`, sans changer les droits Jeedom ni le mode Dashboard.
+- Validation de publication bloquante : références des deux iframes, existence des fichiers dans l'archive Market, identité du bundle React actif, marqueur de version, fichiers PHP et absence de sources obsolètes.
+- Installation File par-dessus un ancien Market : anciens marqueurs traités comme attente de compilation, non comme panne de runtime.
+- Préservation des garde-fous de compilation Market/File, des projets sauvegardés, des tuiles Camera, Vérification Config et de l'aide intégrée.
+
+## V0.90.64-beta — Fiabilite des mises a jour Market (GitHub Beta)
+
+- Installation Market : le marqueur `.market-build-ok` prime sur les anciennes sources locales, meme si celles-ci sont encore presentes apres une mise a jour.
+- Detection d'incoherences : logs INSTALL_OK, INSTALL_RUNTIME_INVALID, INSTALL_SOURCE_STALE / INSTALL_BUILD_STARTED.
+- Construction File : verification des versions avant et apres compilation et refus de remplacer un runtime Market valide par un ancien build.
+- Nouveau point d'entree HTML `app/runtime.php` non cache, qui controle la coherence du JavaScript React actif et affiche un message utilisateur si l'installation est incomplete.
+- Les projets enregistres dans `data/` restent intacts ; aucune migration automatique des affectations.
+- Publication Market : verification bloquante du bundle React actif, point d'entree non cache et neutralisation des scripts de build locaux obsoletes.
+
+## 0.90.63-beta File — Journaux maîtrisés et Vérification Config (08/11/2026)
 - Nouveau bouton **🛡 Vérification Config** dans l'éditeur (administrateurs Jeedom) : lecture seule du projet enregistré, rapport et accès direct aux tuiles.
 - Contrôles : commandes supprimées, types INFO/ACTION incohérents, références de thermostat non résolues, commandes ACTION partagées entre thermostats, équipement Camera introuvable, pages/identifiants dupliqués.
 - Aucun `execCmd()` ni ACTION pendant la vérification. Les commandes partagées volontairement restent intactes ; le contrôle est indicatif et ne remplace pas une vérification matérielle.
@@ -23,8 +40,7 @@
 - `cmdBatch` avec IDs absents mais sans erreur de lecture : diagnostics uniquement en DEBUG. Erreurs de lecture conservées en WARNING.
 - Export du rapport en JSON, sans clé ni URL privée ; contrôle accessible à l'administrateur seulement.
 - Versions 0.90.63-beta synchronisées dans l'éditeur, l'installation, le build, les manifestes et la documentation.
-- Package sources prêt pour le workflow GitHub Actions, compilation React et OVH dans la branche `beta` après validation du workflow. Vérification Config couvre les références enregistrées et nécessite une sauvegarde du projet avant analyse.
-- Aide intégrée accessible par le bouton `❓ Aide` : guides complets (thermostats, Camera, animations, import Dashboard, OVH et vérification) ; nettoyage des anciennes versions dans l’en-tête.
+- **Validation requise sur Jeedom** avant publication GitHub Market. La compilation complète n'a pas été obtenue dans l'environnement de préparation faute de dépendances npm accessibles.
 
 ## 0.90.62-beta File - Camera générique et stabilisation de l’affichage
 - Correction du cycle de vie des images React : remplacement des URL blob temporaires par une donnée JPEG locale stable, vérification du décodage avant affichage.
