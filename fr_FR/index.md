@@ -6,7 +6,7 @@ title: Jeedom Design Studio - Guide utilisateur
 
 # Jeedom Design Studio
 
-**Version 0.90.67-beta — Beta gratuite sous licence non commerciale (validation Jeedom en attente)**
+**Version 0.90.69-beta — Beta gratuite sous licence non commerciale (validation Jeedom en attente)**
 
 Créez et personnalisez des pages de supervision Jeedom : tuiles interactives, températures, éclairage, énergie, thermostats, historique, Smart Layout, seuils de couleurs, animations et mode Kiosque.
 
@@ -80,3 +80,10 @@ La version **GitHub Beta/Market** comporte le front-end React précompilé par G
 ## Vérification Config — Beta 0.90.63
 
 Dans l’éditeur, cliquez sur **🛡 Vérification Config** après **Enregistrer Jeedom** pour identifier les commandes absentes, les thermostats non résolus, les erreurs de type INFO/ACTION et les actions communes à plusieurs tuiles. Le diagnostic est en lecture seule. [Aide complète](./help.html).
+
+
+### Nouveau en V0.90.69-beta : placement fin par page
+
+Dans **Paramètres de la page → Dimensions du canevas**, choisissez la grille historique de 12 colonnes (par défaut) ou une grille de 24/48 colonnes pour placer plus précisément les widgets sur des fonds de plan. Aucune ancienne page n’est convertie automatiquement. La conversion est explicitement confirmée, avec refus si une réduction provoquerait des collisions ou débordements. Grille visuelle facultative en conception uniquement. Les tuiles Texte Micro utilisent leurs paramètres de police, fond, alignements et animations.
+
+**Version beta non validée sur Jeedom :** déploiement Market interdit jusqu’aux tests manuels.

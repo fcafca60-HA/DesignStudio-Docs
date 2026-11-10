@@ -5,7 +5,7 @@ title: Jeedom Design Studio
 
 # Jeedom Design Studio
 
-Documentation publique du plugin **Jeedom Design Studio 0.90.67-beta**.
+Documentation publique du plugin **Jeedom Design Studio 0.90.69-beta**.
 
 - [Documentation en français]({{ '/fr_FR/' | relative_url }})
 - [Licence et conditions d’utilisation]({{ '/fr_FR/licence.html' | relative_url }})

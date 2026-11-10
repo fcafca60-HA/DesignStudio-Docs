@@ -1,6 +1,38 @@
-> **Complément documentaire de la V0.90.67-beta (09/11/2026)** : page [Licence et conditions d'utilisation](./licence.html), visibilité de l'interdiction d'exploitation commerciale sans autorisation écrite, lien vers le texte intégral. Aucun changement du code fonctionnel ; V0.90.67-beta toujours à valider sur Jeedom avant toute publication Market.
+## V0.90.69-beta — Vérification Config étendue (10/11/2026, File / préparation GitHub Beta)
 
-## V0.90.67-beta — Widget Texte enrichi et fonds d'écran (09/11/2026)
+- Base : dernier package V0.90.68 File, correctifs de grille, modales, visibilité et historique conservés.
+- Vérification Config (lecture seule, administrateur) : contrôle supplémentaire des commandes référencées dans les listes Virtual, Mode et Équipement, de leurs `linkedInfoId`, des règles d'alerte par page et du pilotage global des animations saisonnières.
+- Chaque commande manquante affiche son **ID**, la **page**, la **tuile** ou le contexte global et le **chemin de propriété** concerné. Les anciennes vérifications et la limite de 250 anomalies sont conservées.
+- Correction de la version remontée par le rapport JSON (0.90.69-beta au lieu de 0.90.63-beta).
+- Aucun lien de commande n'est supprimé automatiquement, aucune action Jeedom n'est exécutée. Le contrôle reste basé sur le projet enregistré.
+- Validation complète sur Jeedom et compilation Vite requises avant GitHub Beta/Market.
+
+## V0.90.68-beta — Harmonisation des réglages de visibilité (10/11/2026, File de test)
+
+- Déplacement dans **Visibilité** des contrôles de présence historiquement situés dans Général/Style (prises, TRV, Solplanet, EnergyFlow, PowerMeter, Monitoring, Cycle solaire, Log, qualité de l’air et options génériques).
+- Les champs JSON historiques restent inchangés, ainsi que le rendu des pages existantes. L'option Auto respecte les préférences sauvegardées.
+- Copie de Visibilité étendue aux propriétés historiques compatibles, sans commandes Jeedom ni géométrie. Copie de Style nettoyée des réglages de visibilité déplacés.
+- Les fonctionnalités de grille 12/24/48, Texte Micro/Mini et copie de tuile entre pages sont conservées.
+- **File uniquement, compilation npm et tests Jeedom à effectuer.** Ne pas publier Market avant validation.
+
+## V0.90.68-beta — Complément de conception (avant premier test File, 10/11/2026)
+
+- Tuile Texte : le réglage générique « Couleur d’accent » est masqué dans Général ; les réglages génériques de couleurs du titre/texte/valeur sont masqués dans Style pour ce type au profit des réglages spécifiques Texte. Les anciennes propriétés restent dans le JSON, sans migration.
+- Ajout de **Copier Visibilité / Coller Visibilité** sous Copier/Coller Style. Collage multi-tuiles de même type sur toutes les pages ; uniquement `visibility` / `visibilityMode`, sans commander Jeedom, changer les positions, ni écraser le Style.
+- **Copier Tuile / Coller Tuile** : copie temporaire de la configuration persistante d’une tuile, choix de la page cible, puis collage comme nouvelle tuile. Identifiant distinct, emplacement libre, adaptation de largeur en fonction des 12/24/48 colonnes. L’original est conservé.
+- Correction du calcul d’emplacement libre pour prendre en compte la résolution effective de la page cible (12, 24 ou 48 colonnes).
+- Mode File de test : source et script de compilation inclus, compilation React à effectuer sur Jeedom. Aucune publication Market sans validation sur installation de test.
+
+## V0.90.68-beta — Grille par page et Texte Micro/Mini (10/11/2026)
+
+- Grille Desktop 12 colonnes par défaut, choix volontaire 24/48 par page. Conversion horizontale avec confirmation, blocage des collisions et dépassements ; autres pages non modifiées.
+- Repères de grille facultatifs en Conception, masqués en Dashboard/Kiosque. Smartphone conserve sa grille dérivée 6 colonnes.
+- Texte enrichi V0.90.67 appliqué aussi aux MicroTuiles ; Mini utilise le même moteur enrichi. Aucune migration des anciens widgets Texte.
+- Flux publication distante transmet gridColumns. Licence non commerciale inchangée. Validation GitHub et Jeedom encore requise.
+
+> **Complément documentaire de la V0.90.68-beta (09/11/2026)** : page [Licence et conditions d'utilisation](./licence.html), visibilité de l'interdiction d'exploitation commerciale sans autorisation écrite, lien vers le texte intégral. Aucun changement du code fonctionnel ; V0.90.68-beta toujours à valider sur Jeedom avant toute publication Market.
+
+## V0.90.68-beta — Widget Texte enrichi et fonds d'écran (09/11/2026)
 
 - Inclut l'ergonomie V0.90.66 révisée : Import Jeedom, Backup PC et Aperçu visibles, commandes secondaires dans Outils.
 - Widget Texte : alignement horizontal et vertical, famille/taille/épaisseur de police, italique, couleur du texte, fond et opacité, marge intérieure.
