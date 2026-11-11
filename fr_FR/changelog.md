@@ -1,4 +1,40 @@
-## V0.90.69-beta — Vérification Config étendue (10/11/2026, File / préparation GitHub Beta)
+### V0.90.70-beta — GitHub Beta : WLED et styles Virtual (11/11/2026)
+
+- Tuile WLED Mini/Compact/Normal, apparences Moderne/Neon/Glass/Minimal, halo anime, panneau Ambiance, choix RVB, effets/palettes/presets via commandes Jeedom, ampoule ON/OFF et retour INFO confirme.
+- Correction Copier/Coller Style des Virtual : reproduit le mode de rendu, les GIF/images ON/OFF, taille et couleurs par commande sans copier les IDs Jeedom ni les visibilites. Correspondance nom+type, puis rang si structures comparables.
+- Distribution GitHub Beta source, compilation Vite et validation Market bloquees si controles en echec ; validation Jeedom reelle toujours requise.
+
+
+### V0.90.70-beta File — confirmation d’état WLED (11/11/2026)
+
+- Le clic sur l’ampoule conserve les commandes ACTION ON/OFF natives Jeedom.
+- Le message d’attente est remplacé uniquement à la confirmation par la commande INFO d’état ; « Allumée ✓ » ou « Éteinte ✓ » disparaît après 1,5 s.
+- Si aucune confirmation n’est lue après au moins deux périodes de polling, une alerte explicite remplace l’attente infinie.
+- Les erreurs d’exécution restent visibles ; aucune valeur INFO fictive ni configuration projet n’est écrite.
+- Correctif local File uniquement ; version inchangée 0.90.70-beta, build React/Vite et test Jeedom à valider.
+
+## V0.90.70-beta — WLED : ampoule interactive (File local)
+
+- Clic sur l’ampoule pour allumer/éteindre selon l’état INFO Jeedom réel et les commandes ACTION On/Off.
+- Option Style WLED : clic ON/OFF (par défaut) ou indicateur uniquement ; contrôle de présence dans Visibilité.
+- Clic au clavier, contrôle des droits Jeedom, protection anti double-envoi, état non simulé.
+- Numéro conservé 0.90.70-beta ; aucune modification des widgets autres que WLED.
+- Tests TypeScript syntaxiques et PHP uniquement, compilation complète Vite et validation Jeedom nécessaires.
+
+## V0.90.70-beta — WLED V2 (File local)
+- Styles WLED : Moderne, Neon, Glass et Minimal. Halo Aucun/Léger/Moyen/Fort. Animation Auto/Aucune/Pulsation/Onde. Zones colorisées.
+- Popup couleur : affichage RGB et commande ACTION/Couleur uniquement lors de « Appliquer ».
+- Paramètres optionnels : aucune migration des projets existants. Installation File à tester sur Jeedom, sans publication Market.
+
+## V0.90.70-beta File local — Nouvelle tuile WLED (11/11/2026)
+
+- Nouveau widget `wled` indépendant de `light` : import d'équipement `eqType=wled`, association explicite aux ID Jeedom dans Données, aucune API réseau directe.
+- Mini / Compact / Normal, halos et onde LED animés, bouton Ambiance et fenêtre responsive de réglage.
+- ON/OFF, luminosité 0..255, sélecteur natif de couleur, commandes ACTION/Liste pour effet/palette/preset, vitesse et intensité 0..255, couleurs secondaire/tertiaire facultatives.
+- Paramètres Style : mode Auto/Popup/Intégré et animation. Réglages de présence dans Visibilité ; menus ACTION/Liste uniquement avec valeurs publiées par Jeedom.
+- Aucun schéma JSON existant modifié ni migration automatique ; ZIP File à compiler sur Jeedom. Tests réels requis. Cette révision File n'est pas un package Market.
+
+## V0.90.69-beta — Vérification Config étendue (10/11/2026, File de test)
 
 - Base : dernier package V0.90.68 File, correctifs de grille, modales, visibilité et historique conservés.
 - Vérification Config (lecture seule, administrateur) : contrôle supplémentaire des commandes référencées dans les listes Virtual, Mode et Équipement, de leurs `linkedInfoId`, des règles d'alerte par page et du pilotage global des animations saisonnières.

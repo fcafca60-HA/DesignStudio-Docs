@@ -1,3 +1,5 @@
+> **Version actuelle : V0.90.70-beta** — Nouvelle tuile WLED et copie des GIF/images des Virtual via Copier Style.
+
 ---
 layout: default
 permalink: /fr_FR/
@@ -6,7 +8,7 @@ title: Jeedom Design Studio - Guide utilisateur
 
 # Jeedom Design Studio
 
-**Version 0.90.69-beta — Beta gratuite sous licence non commerciale (validation Jeedom en attente)**
+**Version 0.90.70-beta — WLED, correctif de copie des GIF Virtual (validation Jeedom en attente)**
 
 Créez et personnalisez des pages de supervision Jeedom : tuiles interactives, températures, éclairage, énergie, thermostats, historique, Smart Layout, seuils de couleurs, animations et mode Kiosque.
 
