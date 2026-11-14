@@ -1,3 +1,12 @@
+### V0.90.88-beta File RC1 — Sens d’animation individuel des lignes de flux (14/11/2026)
+
+- **Propriétés → Style → Ligne de flux** : case « Inverser le sens de l’animation », placée juste sous « Halo lumineux du tracé ».
+- Inversion **par segment**, indépendamment des autres segments qui peuvent partager la même commande INFO ou variable Jeedom.
+- États inchangés : 0 = trait fixe, 1 et 2 = animation, dont la direction est inversée uniquement si la case est cochée. Couleurs 0/1/2, vitesse, épaisseur et halo inchangés.
+- Les projets existants sans `flowReverseAnimation` sont interprétés comme `false`, donc aucun changement visuel par défaut.
+- Aucun changement sur les commandes Jeedom, l’API, le rendu natif RC6, les SVG, les données ou les autres types de tuiles.
+- Version `0.90.88-beta-plugin • RC1` visible en haut et en pied de page. Tests sur Jeedom à confirmer.
+
 ### V0.90.87-beta — File et GitHub Beta (14/11/2026)
 
 - Base fonctionnelle : V0.90.85 RC6 validée visuellement sur Jeedom par l’utilisateur (widgets natifs myMeteo, myHeliotrope et mySystem).
