@@ -1,3 +1,172 @@
+### V0.90.87-beta — File et GitHub Beta (14/11/2026)
+
+- Base fonctionnelle : V0.90.85 RC6 validée visuellement sur Jeedom par l’utilisateur (widgets natifs myMeteo, myHeliotrope et mySystem).
+- Promotion en 0.90.87-beta sans modification des algorithmes des widgets, des données de projet ni des commandes Jeedom.
+- Contexte natif Dashboard conservé : `data-page=dashboard`, CSS Desktop, Moment.js, chargement `include_file()`, dimensionnement et mesure graphiques.
+- Identité de version alignée : métadonnées Jeedom, installation, script de compilation, source React, version npm/verrou et points d’entrée PHP.
+- Distribution File : source complète et build local contrôlé ; GitHub Beta : runtime précompilé et ressources OVH distantes produites par le workflow.
+- Documentation embarquée, contexte, release notes et contrôles de régression actualisés.
+- Important : les widgets tiers dépendent du navigateur/Jeedom ; la validation réelle sur chaque environnement reste nécessaire.
+
+### V0.90.85-beta File RC6 — contexte Dashboard natif (14/11/2026)
+
+- Ajout de `data-page="dashboard"` et `data-theme` dans l'iframe native pour activer les styles conditionnels Jeedom.
+- Chargement de `coreWidgets.css` et `desktop.main.css` pour tous les widgets natifs, puis du CSS du theme dans un ordre plus proche du Dashboard.
+- Mesure des SVG, Canvas et graphiques absolus dans les deux modes Standard/Dashboard.
+- Retrait de la largeur de layout minimale artificielle de 500 px ; mesures reelles prioritaires.
+- Diagnostic en lecture seule enrichi avec `dashboardContext`, identifiant `RC6` et parametre anti-cache `rc=RC6`.
+- Aucun changement des donnees de projet, equipements ou commandes Jeedom. Validation visuelle sur Jeedom requise.
+
+### V0.90.85-beta File RC5 — Moment.js dans toutes les iframes natives (14/11/2026)
+- Correction du chargement conditionnel de Moment.js de la RC4 : chargement systématique via le mécanisme `include_file` de Jeedom, pour les modes Standard **et** Dashboard renforcé.
+- Diagnostic lecture seule dans la console iframe : `window.jdsNativeDiagnostic`.
+- Traçabilité RC5 en haut, pied de page et URL iframe.
+- Aucun changement de données, des modes enregistrés ou des droits Apache. Rendu Jeedom réel restant à vérifier.
+
+### V0.90.85-beta File RC4 — dépendances graphiques natives (14/11/2026)
+- Chargement de Moment.js (avec locales) dans l'iframe Dashboard renforcé, comme dans Jeedom Desktop.
+- Chargement conditionnel du module Highstock exporting et des styles desktop Jeedom.
+- Contexte de page desktop explicite et paramètre `rc=RC4` dans l'iframe.
+- Numéro RC4 visible dans l'en-tête et le pied de page.
+- Widgets et configurations existants inchangés. Validation visuelle sur Jeedom restant à effectuer.
+
+## V0.90.85-beta File RC3 (14/11/2026)
+- Identification explicite RC3 dans le bandeau superieur et le pied de page, y compris Dashboard compact.
+- Aucun changement du rendu natif : les anomalies myMeteo/myHeliotrope restent en cours d investigation.
+
+### V0.90.85-beta File R2 — widgets natifs (14/11/2026)
+- Correction de l'ordre de chargement des scripts des plugins natifs.
+- Stabilisation de la largeur initiale des iframes Dashboard pour les widgets avec graphiques dynamiques.
+- Mesures de contenu ajustees.
+- Test reel sur Jeedom requis avant validation du rendu identique.
+
+## V0.90.85-beta File — Correctif chargeur de ressources Jeedom (14/11/2026)
+
+- Widgets natifs : chargement CSS/JS via le chargeur officiel Jeedom pour eviter les HTTP 403 sous `desktop/`. Aucun changement des projets existants.
+
+## V0.90.85-beta (File) — Rendu natif renforcé
+
+- Mode Dashboard renforcé facultatif pour les widgets Jeedom natifs graphiques.
+- Chargement contrôlé des ressources locales de Dashboard et mesure élargie des graphiques.
+- Compatibilité : comportement historique conservé par défaut pour les widgets déjà enregistrés.
+- Aucune création ou modification des commandes et équipements Jeedom.
+
+## V0.90.84-beta — Synthèse depuis V0.90.71 (13/11/2026)
+
+- **Symboles et bibliothèque SVG** : modes Symbole/Hybride, 45 symboles fournis, import SVG/ZIP, animations et états configurables.
+- **Visibilité conditionnelle** : règles ET/OU, commandes INFO, variables Jeedom et copie des paramètres.
+- **Widgets Jeedom natifs** : rendu de widgets existants et ajustement à la taille de la tuile.
+- **Pressure Sensor** : valeurs multiples, seuils, historique par commande et visibilité détaillée.
+- **Lignes de flux** : segments droits et coudes raccordables sur grille 12/24/48 ; trois états (0/1/2), trois couleurs et animation dans les deux sens ; halo propre à la ligne optionnel, sans halo du rectangle de tuile.
+- **Compatibilité** : modes Classiques conservés, projets JSON existants préservés, pas de création d'équipement ou commande Jeedom.
+
+La diffusion GitHub/Market produit un frontend précompilé. Les widgets natifs tiers nécessitent une session Jeedom et restent à valider selon le plugin utilisé.
+
+---
+
+## V0.90.84-beta — Synthèse depuis V0.90.71 (13/11/2026)
+
+- **Symboles et bibliothèque SVG** : modes Symbole/Hybride, 45 symboles fournis, import SVG/ZIP, animations et états configurables.
+- **Visibilité conditionnelle** : règles ET/OU, commandes INFO, variables Jeedom et copie des paramètres.
+- **Widgets Jeedom natifs** : rendu de widgets existants et ajustement à la taille de la tuile.
+- **Pressure Sensor** : valeurs multiples, seuils, historique par commande et visibilité détaillée.
+- **Lignes de flux** : segments droits et coudes raccordables sur grille 12/24/48 ; trois états (0/1/2), trois couleurs et animation dans les deux sens ; halo propre à la ligne optionnel, sans halo du rectangle de tuile.
+- **Compatibilité** : modes Classiques conservés, projets JSON existants préservés, pas de création d'équipement ou commande Jeedom.
+
+La diffusion GitHub/Market produit un frontend précompilé. Les widgets natifs tiers nécessitent une session Jeedom et restent à valider selon le plugin utilisé.
+
+---
+
+## V0.90.84-beta — Ligne de flux personnalisable (File)
+
+- Nouvelle tuile « Ligne de flux » avec segments horizontaux, verticaux et coudes dans toutes les directions.
+- Pilotage par INFO ou variable Jeedom : 0 = arrêt, 1 = flux sens 1, 2 = flux sens 2 ; couleur distincte pour chaque état.
+- Réglages du tracé, épaisseur, vitesse et flèches animées dans Style ; copier/coller Style prend en compte ces paramètres.
+- Compatibilité : projets existants inchangés ; aucune création d'ID ou de commande Jeedom.
+
+## V0.90.83-beta — Capteur de pression (File locale)
+
+- Nouvelle tuile **Capteur de pression** avec présentations Mini, Compact et Normal.
+- Import Jeedom : détection du profil pression en bar avec courant mA, LQI, état, statut et dernière communication ; commandes existantes uniquement.
+- Seuils min/max personnalisables pour pression, courant et LQI, coloration d’alerte et seuils visuels dynamiques existants conservés.
+- Historique accessible sur la pression et chaque donnée secondaire liée à une commande INFO (si historisée dans Jeedom).
+- Visibilité indépendante de la jauge, de la pression, de la tendance, des métriques secondaires et des états.
+- Conservation des widgets natifs, des SVG, des conditions et des projets historiques sans migration.
+
+### V0.90.82-beta File — Ajustement des widgets Jeedom natifs (13/11/2026)
+- Mesure de la taille reelle du widget dans sa page Jeedom isolee, puis transmission securisee a Design Studio via postMessage meme origine.
+- Nouvelle option Donnees : Taille originale / Adapter automatiquement a la tuile sans deformation.
+- Bouton Ajuster la tuile aux dimensions natives pour aligner GridStack sur la taille du widget.
+- Suppression des hauteurs minimales du document iframe, fond transparent et masquage du debordement ; aucun style interne du widget tiers modifie.
+- Ancien mode de dimensionnement conserve par defaut et tous les autres widgets inchanges.
+
+### V0.90.82-beta File — Widget Jeedom natif expérimental (13/11/2026)
+- Nouvelle tuile **Widget Jeedom natif** : sélection d'un équipement (`eqLogic`) ou d'une commande (`cmd`) existant(e), sans création d'ID Jeedom ni de table MySQL.
+- Rendu par le moteur Jeedom `toHtml('dashboard')` dans une iframe locale dédiée, afin de conserver les scripts et styles du plugin sans injecter de JavaScript tiers dans React.
+- Chargement des bibliothèques Jeedom principales et des fichiers `desktop/css/<plugin>.css` / `desktop/js/<plugin>.js` lorsqu'ils existent ; zoom de 50 à 150 % et actualisation de secours facultative (défaut 120 secondes).
+- Contrôle session Jeedom et droits de lecture de l'équipement côté PHP, y compris pour les commandes. Aucun contournement par token distant. Les widgets natifs ne sont pas intégrés à la publication déportée.
+- Important : certains widgets tiers dépendent d'autres fichiers, du contexte global de la page Dashboard ou de leurs propres événements ; la compatibilité universelle n'est pas garantie sans tests réels (Tempo, Thermostat officiel, PowerFlow en priorité).
+- Rendu historique et schéma des tuiles existantes inchangés. Nouvelle tuile disponible uniquement après ajout volontaire.
+- Fichier de référence V0.90.71 préservé séparément. Pas de publication Market/GitHub à ce stade.
+
+### V0.90.81-beta File — Correctif sélecteurs INFO/Variables (12/11/2026)
+- Conditions INFO : recherche et sélection hiérarchique **Objet > Équipement > Commande INFO**, en réutilisant le principe du panneau Données. L'ancien menu déroulant plat est remplacé, ID manuel toujours possible.
+- Variables : catalogue des noms de variables Jeedom existantes (`dataStore`, type `scenario`) disponible aux administrateurs, filtre de recherche ; saisie manuelle conservée.
+- API `variableList` en lecture seule : noms uniquement, réservée aux administrateurs ; aucun changement de la lecture `variableBatch` ni des affectations existantes.
+- Valeur principale en Données : même sélecteur de variables.
+- Aucun changement de schéma JSON, conditions ET/OU, style, SVG ou actions Jeedom.
+
+### V0.90.81-beta File — Variables Jeedom et visibilité conditionnelle (12/11/2026)
+- **Visibilité de la tuile** optionnelle, indépendante de la visibilité des éléments internes ; ET/OU et conditions multiples (`=`, `!=`, `>`, `>=`, `<`, `<=`, contient, ne contient pas).
+- Sources : variable de scénario Jeedom, commande INFO, valeur principale d'une autre tuile.
+- Valeur principale d'une tuile alimentable en lecture seule par une variable de scénario, dans l'onglet Données.
+- Les tuiles conditionnellement masquées restent accessibles en Conception (rendu estompé) ; elles sont invisibles sans déplacement de la grille en Dashboard/Aperçu/Kiosque.
+- Comportement si une donnée est indisponible configurable (Afficher par défaut ou Masquer). Logique ET/OU conservatrice.
+- Copier/Coller Visibilité transporte aussi les conditions de visibilité, sans modifier les bindings Jeedom ; Copier/Coller Style reste indépendant et conserve les réglages SVG.
+- API `variableBatch` bornée, noms de variables contrôlés, lecture seule ; accès non-admin limité aux variables des tuiles autorisées ; pas d'évaluation de code.
+- Aucun nouveau champ requis : projets V0.90.80 et V0.90.71 inchangés tant que ces options ne sont pas activées.
+- Bibliothèque SVG, symboles animés et rendu Dashboard corrigé préservés.
+
+
+### V0.90.80-beta File — Catalogue SVG et animations articulées
+- Bibliothèque préinstallée : 45 SVG sur 8 catégories, ajout initial non destructif dans data/svg-library.
+- Animations CSS de groupes explicitement nommés, sans scripts dans les SVG, rendu historique non marqué inchangé.
+- Gestionnaire : aperçu d'animation ON/OFF, nouvelles catégories.
+- Nouvelles tuiles uniquement : Badge LIVE / source masqué par défaut. Les anciens réglages de visibilité sont préservés.
+- V0.90.71 conservée hors de cette archive comme référence de restauration.
+
+## V0.90.80-beta File — bibliothèque SVG serveur (12/11/2026)
+- Gestion Bibliothèque SVG : import multiple SVG ou ZIP, catégories, aperçu, test ON/OFF et suppression protégée.
+- Stockage séparé dans `data/svg-library/`, sans modification automatique du `graphicLibrary` historique.
+- Les fichiers sont contrôlés et filtrés côté PHP ; utilisation depuis les tuiles via les identifiants `srv-...`.
+- Maintenance File locale ; ni publication GitHub ni Market ; tests réels Jeedom et build Vite restent à confirmer.
+
+### V0.90.80-beta File révisée — Symboles animés, plein espace et clic sécurisé (12/11/2026)
+
+- Conserve la V0.90.80 File et la base de retour arrière 0.90.71 sans modification.
+- Mode Symbole : cadre désactivé par défaut, taille SVG jusqu'à l'espace utile, choix de cadre Aucun / Léger / Verre et taille Maximale / Grande / Moyenne / Auto. Mode Hybride identique par défaut sauf cadre léger.
+- SVG natifs améliorés : battants fenêtre et porte articulés selon l'état, ventilation en rotation, rayonnement lampe/prise/radiateur et halos dynamiques, respect de la préférence système « animations réduites ».
+- Clic ON/OFF optionnel sur Lumière, WLED, Prise, Relais et Interrupteur **uniquement** quand l'INFO binaire d'état est connue et que l'ACTION adaptée est affectée ; appel Jeedom natif déjà sécurisé, jamais d'appel WLED direct. Capteurs passifs et site distant : lecture seule.
+- Poignée de déplacement séparée en conception pour ne pas confondre glisser/déposer et clic action. Aucun changement du chemin de rendu Classique ni des propriétés JSON existantes ; propriétés ajoutées facultatives.
+- Compilation Vite et tests Jeedom réels restent obligatoires avant toute diffusion GitHub/Market.
+
+### V0.90.80-beta File — Symboles graphiques et Hybride (11/11/2026)
+
+- Branche nouvelle séparée de la **V0.90.71-beta File de référence** ; le ZIP 0.90.71 reste intact pour retour arrière.
+- Nouvelle représentation graphique en option **Classique / Symbole / Hybride** sur les seules familles compatibles.
+- Bibliothèque native SVG (fenêtre, porte, ampoule, prise, radiateur, ventilateur, thermomètre, goutte, sécurité), halo paramétrable, couleurs selon état et animation optionnelle.
+- Mode Classique implicite pour tous les projets existants, sans migration automatique ni modification des affectations, positions ou autorisations.
+- Phase 1 uniquement en **lecture seule** : commandes Jeedom existantes non exécutées par le symbole ; repasser en Classique pour le pilotage.
+- Compilation et validation Jeedom réelles exigées avant toute diffusion GitHub / Market ; ne pas annoncer le risque zéro sans validation.
+
+### V0.90.71-beta File - Smart Layout petites tuiles (11/11/2026)
+
+- Correction des rendus Contact Porte/Fenetre et autres capteurs d'etat a largeur reduite, en mode Smart Layout automatique/compact : dessin adapte a la zone disponible et affichage simplifie lorsque l'espace manque.
+- Les tailles de police Valeur et Unite definies dans Style reprennent priorite sur les tailles forcees Mini, notamment Temperature/Humidite. Limitation a l'espace disponible pour eviter tout debordement.
+- Transparence de la tuile etendue aux fonds decoratifs internes des capteurs et des Virtuels ; les controles actifs et etats restent lisibles.
+- Les pages/tuile en mode Classique sans modification restent sur leur presentation historique ; aucun changement de structure JSON ou d'affectation Jeedom.
+- Controle statique uniquement ; compilation Vite et validation Jeedom requises avant publication Market.
+
 ### V0.90.70-beta — GitHub Beta : WLED et styles Virtual (11/11/2026)
 
 - Tuile WLED Mini/Compact/Normal, apparences Moderne/Neon/Glass/Minimal, halo anime, panneau Ambiance, choix RVB, effets/palettes/presets via commandes Jeedom, ampoule ON/OFF et retour INFO confirme.
@@ -857,3 +1026,11 @@ title: Historique des versions
 ## 0.50.0
 - Première version plugin Jeedom.
 - Interface React embarquée, relais API PHP local et tokens Kiosque.
+
+### V0.90.80-beta File — Bibliothèque SVG personnalisée (12/11/2026)
+- Ajout optionnel d'une bibliothèque de SVG réutilisables, rattachée au projet et incluse dans Backup PC.
+- Association indépendante des dessins pour états actif/ouvert et inactif/fermé, avec halo et animation globale existants.
+- Import SVG strictement filtré : aucun script, CSS, événement, URL, ressource externe ou animation embarquée ; limite de 32 symboles et 32 Ko par SVG.
+- Correction du centre de rotation du rotor du symbole Ventilateur natif.
+- Modes classiques, anciennes données et commandes Jeedom inchangés. Aucun ajustement automatique des projets existants.
+- Version File à compiler et tester sur Jeedom ; viewer distant OVH non enrichi dans cette révision.

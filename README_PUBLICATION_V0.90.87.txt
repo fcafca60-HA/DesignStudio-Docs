@@ -1,0 +1,1 @@
+Documentation publique issue de la source V0.90.87-beta. Le PDF QuickStart_DesignStudio.pdf est conserve tel quel (contenu historique non revise). Mettre a jour dans le depot DesignStudio-Docs sans ecraser les autres pages publiques non presentes dans ce ZIP.
